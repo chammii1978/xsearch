@@ -31,9 +31,7 @@ def select_type(update, context):
     elif data[2] in ["root", "recu"]:
         query.answer()
         buttons = button_builder.ButtonMaker()
-        buttons.sbutton("Folders", f"types {user_id} folders {data[2]}")
-        buttons.sbutton("Files", f"types {user_id} files {data[2]}")
-        buttons.sbutton("Both", f"types {user_id} both {data[2]}")
+        buttons.sbutton("Search", f"types {user_id} both {data[2]}")
         buttons.sbutton("Cancel", f"types {user_id} cancel")
         button = InlineKeyboardMarkup(buttons.build_menu(2))
         editMessage('Choose option to list.', msg, button)
